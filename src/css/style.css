@@ -1,0 +1,35 @@
+.gridStyle {
+    border: 1px solid rgb(212, 212, 212);
+    width: 600px;
+    height: 400px
+}
+
+.green-light {
+    background-color: #D0E6C9;
+    color: #D0E6C9;
+}
+
+.green-medium {
+    background-color: #82BA69;
+    color: #82BA69;
+}
+
+.green-dark {
+    background-color: #2B6516;
+    color: #2B6516;
+}
+
+.red {
+    background-color: red;
+    color: red;
+}
+
+.reached-yes {
+    background-color: #D0E6C9;
+    color: #D0E6C9;
+}
+
+.reached-no {
+    background-color: #F0BFC0;
+    color: #F0BFC0;
+}
