@@ -10,14 +10,16 @@ app.controller('SkillsController', function ($scope, skillsService) {
         columnDefs: [
             {field: 'name', displayName: 'Name'},
             {field: 'type', displayName: 'Type'},
-            {field: 'have', displayName: 'Have (Random)'},
-            {field: 'want', displayName: 'Want (Random)'},
+//            {field: 'have', displayName: 'Have (Random)'},
+//            {field: 'want', displayName: 'Want (Random)'},
+            {
+                displayName: 'Progress',
+                cellTemplate: 'partials/tmplCellProgress.html'
+            },
             {
                 field: 'reached',
                 displayName: 'Reached',
-                cellTemplate: '<div class="ngCellText" ng-class="' +
-                    'col.colIndex() && {\'reached-yes\': row.getProperty(col.field), \'reached-no\': !row.getProperty(col.field)}' +
-                    '"><span ng-cell-text>{{ (row.getProperty(col.field)) }}</span></div>'
+                cellTemplate: 'partials/tmplCellReached.html'
             }
         ],
         enableRowSelection: false,

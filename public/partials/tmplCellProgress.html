@@ -1,0 +1,7 @@
+<div class="ngCellText cell-progress" ng-class="col.colIndex()">
+    <span ng-cell-text><div class="progress">
+        <div class="bar bar-success" ng-style="{'width': 33.3*row.getProperty('have') + '%'}"></div>
+        <div class="bar bar-warning" ng-style="{'width': 33.3*(row.getProperty('want') - row.getProperty('have')) + '%'}"></div>
+    </div>
+</span>
+</div>

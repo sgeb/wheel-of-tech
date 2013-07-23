@@ -24,12 +24,12 @@
     color: red;
 }
 
-.reached-yes {
-    background-color: #D0E6C9;
-    color: #D0E6C9;
-}
-
-.reached-no {
+.cell-reached {
     background-color: #F0BFC0;
     color: #F0BFC0;
+}
+
+.cell-reached.cell-reached-yes {
+    background-color: #D0E6C9;
+    color: #D0E6C9;
 }
