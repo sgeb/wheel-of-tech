@@ -25,7 +25,7 @@ app.controller('SkillsController', function ($scope, skillsService) {
                 field: 'status',
                 displayName: String.fromCharCode(160), // 160 is a protected space = &nbsp;
                 cellTemplate: 'partials/tmplCellStatus.html',
-                width: 23
+                width: 25
             },
             {
                 field: 'name',

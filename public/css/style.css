@@ -1,28 +1,22 @@
 .gridStyle {
     border: 1px solid rgb(212, 212, 212);
-    width: 573px;
+    width: 575px;
 }
 
 .gridStyle .ngViewport {
     overflow: hidden;
 }
 
-.skill-status {
-    visibility: hidden;
-}
-
 .skill-status.completed:before {
     content: "\2713"; /* tick mark */
     color: #999999;
-    visibility: visible;
 }
 
 .skill-status.starred:before {
-    content: "\2605"; /* yellow star with darker stroker */
+    content: "\2605"; /* yellow star with darker stroke */
     color: #FCCF5B;
     -webkit-text-stroke: 1px #e3b640;
     -webkit-text-fill-color: #FCCF5B;
-    visibility: visible;
 }
 
 .modules {
