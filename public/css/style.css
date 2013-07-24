@@ -1,6 +1,6 @@
 .gridStyle {
     border: 1px solid rgb(212, 212, 212);
-    width: 600px;
+    width: 80%;
     height: 400px
 }
 
@@ -32,4 +32,90 @@
 .cell-reached.cell-reached-yes {
     background-color: #D0E6C9;
     color: #D0E6C9;
+}
+
+.modules {
+    background-color: #F3F3F3;
+    position: absolute;
+    line-height: 1.6em;
+}
+
+.modules .module {
+    display: inline-block;
+    background-color: #d9d9d9;
+    color: #f2f2f2;
+    padding: 0 1em;
+    /*border: 1px solid red;*/
+}
+
+.modules .module.skill-want.skill-have {
+    background-color: #006dcc;
+}
+
+.modules .module.skill-want {
+    background-color: #c4e3f3;
+}
+
+.modules .module.arrow-right {
+    position: relative;
+    padding-right: 0.5em;
+}
+
+.modules .module.arrow-right + .module {
+    padding-left: 1.5em;
+}
+
+.modules .module:first-child {
+    border-radius: 0.5em 0 0 0.5em;
+}
+
+.modules .module:last-child {
+    border-radius: 0 0.5em 0.5em 0;
+}
+
+.modules .module.arrow-right:before,
+.modules .module.arrow-right:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    /* Pushed down half way, will get pulled back up half height of triangle
+       ensures centering if font-size or line-height changes */
+    top: 50%;
+    width: 0;
+    height: 0;
+}
+
+.modules .module.arrow-right:before {
+    right: -1.1em;
+    /* Triangle */
+    border-top: 0.8em solid transparent;
+    border-bottom: 0.8em solid transparent;
+    border-left: 0.8em solid #F3F3F3;
+    /* Pull-up */
+    margin-top: -0.8em;
+}
+
+.ngRow.odd .modules {
+    background-color:#fdfdfd;
+}
+
+.ngRow.odd .modules .module.arrow-right:before {
+    border-left-color:#fdfdfd;
+}
+
+.modules .module.arrow-right:after {
+    /* Smaller and different position triangle */
+    right: -0.8em;
+    border-top: 0.8em solid transparent;
+    border-bottom: 0.8em solid transparent;
+    border-left: 0.8em solid #d9d9d9;
+    margin-top: -0.8em;
+}
+
+.modules .module.arrow-right.skill-want.skill-have:after {
+    border-left-color: #006dcc;
+}
+
+.modules .module.arrow-right.skill-want:after {
+    border-left-color: #c4e3f3;
 }

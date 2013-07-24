@@ -1,7 +1,15 @@
 <div class="ngCellText cell-progress" ng-class="col.colIndex()">
-    <span ng-cell-text><div class="progress">
-        <div class="bar bar-success" ng-style="{'width': 33.3*row.getProperty('have') + '%'}"></div>
-        <div class="bar bar-warning" ng-style="{'width': 33.3*(row.getProperty('want') - row.getProperty('have')) + '%'}"></div>
-    </div>
-</span>
+    <span ng-cell-text>
+        <div class="modules">
+            <div class="module arrow-right"
+                 ng-class="{'skill-have': row.getProperty('have') >= 1, 'skill-want': row.getProperty('want') >= 1}">1
+            </div>
+            <div class="module arrow-right"
+                 ng-class="{'skill-have': row.getProperty('have') >= 2, 'skill-want': row.getProperty('want') >= 2}">2
+            </div>
+            <div class="module"
+                 ng-class="{'skill-have': row.getProperty('have') >= 3, 'skill-want': row.getProperty('want') >= 3}">3
+            </div>
+        </div>
+    </span>
 </div>
