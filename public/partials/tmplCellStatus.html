@@ -1,3 +1,4 @@
-<div class="ngCellText skill-status" ng-class="col.colIndex() && {'skill-status-completed': row.getProperty(col.field)}">
-    <span ng-cell-text></span>
+<div class="ngCellText skill-status"
+     ng-class="col.colIndex() && row.getProperty(col.field)">
+    <span ng-cell-text>{{ row.getProperty(col.field) }}</span>
 </div>

@@ -60,5 +60,6 @@ app.service('skillsService', function () {
 
         skills[i].have = have;
         skills[i].want = want;
+        skills[i].starred = have < want && Math.random() < 0.5;
     }
 });

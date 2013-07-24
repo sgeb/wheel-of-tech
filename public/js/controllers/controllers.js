@@ -1,30 +1,54 @@
 app.controller('SkillsController', function ($scope, skillsService) {
     skills = skillsService.getSkills();
     for (var i = 0; i < skills.length; i++) {
-        skills[i].reached = skills[i].have >= skills[i].want;
+        if (skills[i].have >= skills[i].want) {
+            skills[i].status = "completed";
+        }
+        else if (skills[i].starred) {
+            skills[i].status = "starred";
+        }
+        else if (skills[i].want == 0) {
+            skills[i].status = "not_wanted"
+        }
+        else {
+            skills[i].status = "in_progress";
+        }
     }
+
     $scope.skills = skills;
 
     $scope.gridOptions = {
         plugins: [new ngGridFlexibleHeightPlugin()],
         data: 'skills',
         columnDefs: [
-            {field: 'name', displayName: 'Name'},
-            {field: 'type', displayName: 'Type'},
+            {
+                field: 'status',
+                displayName: String.fromCharCode(160), // 160 is a protected space = &nbsp;
+                cellTemplate: 'partials/tmplCellStatus.html',
+                width: 23
+            },
+            {
+                field: 'name',
+                displayName: 'Name',
+                width: 250
+            },
+            {
+                field: 'type',
+                displayName: 'Type',
+                width: 150
+            },
 //            {field: 'have', displayName: 'Have (Random)'},
 //            {field: 'want', displayName: 'Want (Random)'},
             {
+                field: 'have',
                 displayName: 'Progress',
-                cellTemplate: 'partials/tmplCellProgress.html'
-            },
-            {
-                field: 'reached',
-                displayName: 'Reached',
-                cellTemplate: 'partials/tmplCellReached.html'
+                cellTemplate: 'partials/tmplCellProgress.html',
+                width: 150
             }
         ],
         enableRowSelection: false,
-        sortInfo: { fields: ['name'], directions: ['asc']}
+        enableSorting: true,
+        sortInfo: { fields: ['status'], directions: ['desc']}
     };
 
 });

@@ -1,39 +1,28 @@
 .gridStyle {
     border: 1px solid rgb(212, 212, 212);
+    width: 573px;
 }
 
 .gridStyle .ngViewport {
     overflow: hidden;
 }
 
-.green-light {
-    background-color: #D0E6C9;
-    color: #D0E6C9;
+.skill-status {
+    visibility: hidden;
 }
 
-.green-medium {
-    background-color: #82BA69;
-    color: #82BA69;
+.skill-status.completed:before {
+    content: "\2713"; /* tick mark */
+    color: #999999;
+    visibility: visible;
 }
 
-.green-dark {
-    background-color: #2B6516;
-    color: #2B6516;
-}
-
-.red {
-    background-color: red;
-    color: red;
-}
-
-.cell-reached {
-    background-color: #F0BFC0;
-    color: #F0BFC0;
-}
-
-.cell-reached.cell-reached-yes {
-    background-color: #D0E6C9;
-    color: #D0E6C9;
+.skill-status.starred:before {
+    content: "\2605"; /* yellow star with darker stroker */
+    color: #FCCF5B;
+    -webkit-text-stroke: 1px #e3b640;
+    -webkit-text-fill-color: #FCCF5B;
+    visibility: visible;
 }
 
 .modules {
@@ -47,7 +36,6 @@
     background-color: #d9d9d9;
     color: #f2f2f2;
     padding: 0 1em;
-    /*border: 1px solid red;*/
 }
 
 .modules .module.skill-want.skill-have {
@@ -98,11 +86,11 @@
 }
 
 .ngRow.odd .modules {
-    background-color:#fdfdfd;
+    background-color: #fdfdfd;
 }
 
 .ngRow.odd .modules .module.arrow-right:before {
-    border-left-color:#fdfdfd;
+    border-left-color: #fdfdfd;
 }
 
 .modules .module.arrow-right:after {
