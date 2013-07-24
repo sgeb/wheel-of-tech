@@ -6,6 +6,7 @@ app.controller('SkillsController', function ($scope, skillsService) {
     $scope.skills = skills;
 
     $scope.gridOptions = {
+        plugins: [new ngGridFlexibleHeightPlugin()],
         data: 'skills',
         columnDefs: [
             {field: 'name', displayName: 'Name'},
