@@ -2,6 +2,10 @@
     border: 1px solid rgb(212, 212, 212);
 }
 
+.gridStyle .ngViewport {
+    overflow: hidden;
+}
+
 .green-light {
     background-color: #D0E6C9;
     color: #D0E6C9;
